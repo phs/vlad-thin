@@ -1,16 +1,8 @@
 = vlad-thin
 
-Description goes here.
+Control thin with vlad.
 
-== Note on Patches/Pull Requests
- 
-* Fork the project.
-* Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a
-  future version unintentionally.
-* Commit, do not mess with rakefile, version, or history.
-  (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
-* Send me a pull request. Bonus points for topic branches.
+This is thin's own {example/vlad.rake}[link:http://github.com/macournoyer/thin/raw/56c9b3eb2553ef6f6784768a3265d6562ab87b0f/example/vlad.rake] in a gem.  Don't ask me why it wasn't already in one..
 
 == Copyright
 
