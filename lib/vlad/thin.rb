@@ -19,6 +19,8 @@ namespace :vlad do
   set :thin_prefix,        nil
   set :thin_servers,       2
   set :thin_user,          nil
+  
+  set :thin_uses_bundler,  false
 
   desc "Prepares application servers for deployment. thin
 configuration is set via the thin_* variables.".cleanup
@@ -47,7 +49,11 @@ configuration is set via the thin_* variables.".cleanup
   end
 
   def thin(cmd) # :nodoc:
-    "#{thin_command} #{cmd} -C #{thin_conf}"
+    if thin_uses_bundler
+      "bundle exec #{thin_command} #{cmd} -C #{thin_conf}"
+    else
+      "#{thin_command} #{cmd} -C #{thin_conf}"
+    end
   end
 
   desc "Restart the app servers"
