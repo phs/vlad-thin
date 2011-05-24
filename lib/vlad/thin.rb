@@ -34,7 +34,7 @@ configuration is set via the thin_* variables.".cleanup
            ("-s #{thin_servers}" if thin_servers),
            ("-S #{thin_socket}" if thin_socket),
            ("-e #{thin_environment}" if thin_environment),
-           "-a #{thin_address}",
+           ("-a #{thin_address}" if thin_address),
            "-c #{current_path}",
            ("-C #{thin_conf}" if thin_conf),
            ("-P #{thin_pid_file}" if thin_pid_file),
