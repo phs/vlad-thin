@@ -29,12 +29,12 @@ configuration is set via the thin_* variables.".cleanup
   
     cmd = [
            "#{thin_command} config",
-           "-s #{thin_servers}",
+           ("-s #{thin_servers}" if thin_servers),
            ("-S #{thin_socket}" if thin_socket),
-           "-e #{thin_environment}",
+           ("-e #{thin_environment}" if thin_environment),
            "-a #{thin_address}",
            "-c #{current_path}",
-           "-C #{thin_conf}",
+           ("-C #{thin_conf}" if thin_conf),
            ("-P #{thin_pid_file}" if thin_pid_file),
            ("-l #{thin_log_file}" if thin_log_file),
            ("--user #{thin_user}" if thin_user),
