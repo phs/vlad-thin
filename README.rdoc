@@ -8,7 +8,7 @@ Yell at me (via an issue) if thin’s bundled vlad.rake changes, I’m totally n
 
 == Thanks
 
-* [MichaelXavier](https://github.com/MichaelXavier)
+* https://github.com/MichaelXavier
 
 == Copyright
 
