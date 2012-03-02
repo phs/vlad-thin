@@ -6,6 +6,10 @@ This is thin's own <tt>example/vlad.rake</tt> (specifically http://github.com/ma
 
 Yell at me (via an issue) if thin’s bundled vlad.rake changes, I’m totally not paying attention.
 
+== Thanks
+
+* [MichaelXavier](https://github.com/MichaelXavier)
+
 == Copyright
 
 Copyright (c) 2010 Phil Smith. See LICENSE for details.
