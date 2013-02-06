@@ -26,9 +26,6 @@ namespace :vlad do
 configuration is set via the thin_* variables.".cleanup
 
   remote_task :setup_app, :roles => :app do
-  
-    raise(ArgumentError, "Please provide either thin_socket or thin_port") if thin_port.nil? && thin_socket.nil?
-  
     cmd = [
            "config",
            (%(-s "#{thin_servers}") if thin_servers),
