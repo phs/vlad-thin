@@ -4,14 +4,14 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = "vlad-thin"
-  s.version = "1.1.1"
+  s.name = %q{vlad-thin}
+  s.version = "1.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Phil Smith"]
-  s.date = "2012-03-02"
-  s.description = "This is thin's own example/vlad.rake in a gem"
-  s.email = "phil.h.smith@gmail.com"
+  s.date = %q{2013-02-06}
+  s.description = %q{This is thin's own example/vlad.rake in a gem}
+  s.email = %q{phil.h.smith@gmail.com}
   s.extra_rdoc_files = [
     "LICENSE",
     "README.rdoc"
@@ -25,15 +25,16 @@ Gem::Specification.new do |s|
     "lib/vlad/thin.rb",
     "vlad-thin.gemspec"
   ]
-  s.homepage = "http://github.com/phs/vlad-thin"
+  s.homepage = %q{http://github.com/phs/vlad-thin}
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.17"
-  s.summary = "Control thin with vlad"
+  s.rubygems_version = %q{1.3.6}
+  s.summary = %q{Control thin with vlad}
 
   if s.respond_to? :specification_version then
+    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
-    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+    if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
       s.add_development_dependency(%q<rspec>, [">= 1.2.9"])
     else
       s.add_dependency(%q<rspec>, [">= 1.2.9"])
