@@ -30,7 +30,7 @@ configuration is set via the thin_* variables.".cleanup
     raise(ArgumentError, "Please provide either thin_socket or thin_port") if thin_port.nil? && thin_socket.nil?
   
     cmd = [
-           "#{thin_command} config",
+           "config",
            (%(-s "#{thin_servers}") if thin_servers),
            (%(-S "#{thin_socket}") if thin_socket),
            (%(-e "#{thin_environment}") if thin_environment),
@@ -45,15 +45,17 @@ configuration is set via the thin_* variables.".cleanup
            (%(-p "#{thin_port}") if thin_port),
           ].compact.join ' '
 
-    run cmd
+    thin(cmd)
   end
 
   def thin(cmd) # :nodoc:
-    if thin_uses_bundler
-      %(bundle exec #{thin_command} #{cmd} -C "#{thin_conf}")
+    command = if thin_uses_bundler
+      %(BUNDLE_GEMFILE="#{current_path}/Gemfile" bundle exec #{thin_command} #{cmd} -C "#{thin_conf}")
     else
       %(#{thin_command} #{cmd} -C "#{thin_conf}")
     end
+
+    %(cd "#{current_path}" && #{command})
   end
 
   desc "Restart the app servers"
