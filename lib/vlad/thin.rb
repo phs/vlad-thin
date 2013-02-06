@@ -20,7 +20,7 @@ namespace :vlad do
   set :thin_servers,       2
   set :thin_user,          nil
   
-  set :thin_uses_bundler,  false
+  set :thin_uses_bundler,  true
 
   desc "Prepares application servers for deployment. thin
 configuration is set via the thin_* variables.".cleanup
