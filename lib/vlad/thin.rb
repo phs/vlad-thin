@@ -7,7 +7,7 @@ namespace :vlad do
   ##
   # Thin app server
 
-  set :thin_address,       "127.0.0.1"
+  set :thin_address,       nil
   set :thin_command,       "thin"
   set(:thin_conf)          { "#{shared_path}/thin_cluster.conf" }
   set :thin_environment,   "production"
